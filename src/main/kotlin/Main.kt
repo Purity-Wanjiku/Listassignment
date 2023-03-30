@@ -33,10 +33,11 @@ fun heightOfPeople (height:List<Double>):Pair<Double,Double> {
     return Pair(avg, sum)
 }
 //No. 3
-//Given a list of Person objects, each with the attribute name, age, height and weight
+//Given a list of Person objects,
+// each with the attribute name, age, height and weight
 //sort the list in order of the descending age
 
-data class Person (var name:String, var age: Int, var height: Double, var weight:Int)
+open  class Person ( name:String,var  age: Int,  height: Double, weight:Int)
 
 fun personobjects () {
     val person1 = Person("Hugo",30, 5.6, 54)
@@ -51,7 +52,16 @@ fun personobjects () {
 //Given a list similar to the one above,
 //write a function in which you will create 2 more people objects
 //and add them to the list at one go
+class People (name: String,age: Int, height:Double, weight: Int):Person(name,age,height,weight){
+    fun newpersonobjects (){
+        val people1 = People("Priscilla",34,6.1,56)
+        val people2 = People("Diana",34,5.8,50)
 
+
+    }
+
+
+}
 
 //No. 5
 //write a function that takes in a list of Car objects

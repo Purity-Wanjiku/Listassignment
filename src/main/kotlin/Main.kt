@@ -2,6 +2,8 @@ import java.util.Objects
 
 fun main() {
 //    val get = heightOfPeople(listOf(5,6,8))
+    val getit = tenStrings(listOf("tomato","cherry","berry","pawpaw","mango","cucumber","banana","yams","cassava","wheat"))
+        println(getit)
 
     var getavg = heightOfPeople(listOf(20.0,30.0,12.0,40.0))
     println(getavg)
@@ -16,11 +18,20 @@ fun main() {
     )
     val avgMileage = cars(objects)
     println(avgMileage)
+
+
 }
 //No. 1
 //Given a list of 10 strings,
 // write a function that returns a list of strings
 // at even indices i.e. index2,3, etc
+fun tenStrings(words: List<String>): List<String>{
+    val getEven = mutableListOf<String>()
+    for (i in words.indices step 2){
+        getEven.add(words[i])
+    }
+    return getEven
+}
 
 
 //No. 2
@@ -37,7 +48,7 @@ fun heightOfPeople (height:List<Double>):Pair<Double,Double> {
 // each with the attribute name, age, height and weight
 //sort the list in order of the descending age
 
-open  class Person ( name:String,var  age: Int,  height: Double, weight:Int)
+data class Person (var name:String,var age: Int,var height: Double,var weight:Int)
 
 fun personobjects () {
     val person1 = Person("Hugo",30, 5.6, 54)
@@ -52,16 +63,15 @@ fun personobjects () {
 //Given a list similar to the one above,
 //write a function in which you will create 2 more people objects
 //and add them to the list at one go
-class People (name: String,age: Int, height:Double, weight: Int):Person(name,age,height,weight){
-    fun newpersonobjects (){
-        val people1 = People("Priscilla",34,6.1,56)
-        val people2 = People("Diana",34,5.8,50)
-
-
-    }
-
-
-}
+//class People (name: String,age: Int, height:Double, weight: Int):Person(name,age,height,weight){
+//    fun newpeople () {
+//        val peopleA = People("Priscilla",34,6.1,56)
+//        val peopleB = People("Diana",34,5.8,50)
+//
+//         var addingpeople = listOf<People>(peopleA,peopleB)
+//        println(addingpeople)
+//    }
+//}
 
 //No. 5
 //write a function that takes in a list of Car objects
